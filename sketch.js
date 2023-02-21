@@ -26,7 +26,7 @@ function draw() {
     background("cyan")
     
     if(keyDown("space")){
-      trexSprite.velocityY = 10;
+      trexSprite.velocityY = -10;
     }
     trexSprite.velocityY += 0.8;
     drawSprites();
