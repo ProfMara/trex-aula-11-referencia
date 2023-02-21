@@ -1,10 +1,9 @@
 var soloSprite, soloImagem;
 //é aqui que cria a variável
 var trexSprite, trexAnimacao;
-
+//nessa função, carrega-se arquivos de mídia
 function preload() {
 
-    soloImagem = loadImage("solo.png");
     //é aqui que carrega a animação
     trexAnimacao = loadAnimation("trex1.png","trex2.png","trex3.png");
 
@@ -14,8 +13,7 @@ function preload() {
 function setup() {
     createCanvas(600, 200);
     
-    soloSprite = createSprite(300, 180, 600, 40);
-    soloSprite.addImage(soloImagem);
+
     //é aqui que cria a sprite
     trexSprite = createSprite(50,170,50,50);
     trexSprite.addAnimation("correndo",trexAnimacao);
@@ -26,6 +24,10 @@ function setup() {
 
 function draw() {
     background("cyan")
-   
+    
+    if(keyDown("space")){
+      trexSprite.velocityY = 10;
+    }
+    trexSprite.velocityY += 0.8;
     drawSprites();
 }
